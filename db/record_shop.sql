@@ -22,5 +22,6 @@ CREATE TABLE albums
   genre VARCHAR(255),
   stock_quantity INT,
   buying_cost DECIMAL(4, 2),
-  selling_price DECIMAL(4, 2)
+  selling_price DECIMAL(4, 2),
+  artist_id INT REFERENCES artists(id)
 )

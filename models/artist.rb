@@ -1,4 +1,4 @@
-require_relative('..db/sql_runner')
+require_relative('../db/sql_runner')
 
 class Artist
 
@@ -11,6 +11,18 @@ class Artist
     @label_id = options['label_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO artists
+    ( name,
+      label_id
+    ) VALUES (
+      $1,
+      $2
+    ) RETURNING id;"
+    values = [@name, @label_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
 
 
 end
