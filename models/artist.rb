@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Artist
 
-  attr_reader(:id, :label_id)
+  attr_reader(:id)
   attr_accessor(:name)
 
   def initialize(options)
@@ -36,6 +36,15 @@ class Artist
   def self.delete_all()
     sql = "DELETE from artists;"
     SqlRunner.run(sql)
+  end
+
+  def labels()
+    sql = "SELECT labels.* FROM labels
+    INNER JOIN albums ON albums.label_id = labels.id
+    WHERE albums.artist_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|label| Label.new(label)}
   end
 
 end
