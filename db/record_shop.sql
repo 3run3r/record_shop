@@ -11,8 +11,7 @@ CREATE TABLE labels
 CREATE TABLE artists
 (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
-  label_id INT REFERENCES labels(id)
+  name VARCHAR(255)
 );
 
 CREATE TABLE albums
@@ -23,5 +22,6 @@ CREATE TABLE albums
   stock_quantity INT,
   buying_cost DECIMAL(4, 2),
   selling_price DECIMAL(4, 2),
-  artist_id INT REFERENCES artists(id)
+  artist_id INT REFERENCES artists(id),
+  label_id INT REFERENCES labels(id)
 )

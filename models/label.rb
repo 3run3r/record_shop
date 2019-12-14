@@ -19,4 +19,21 @@ class Label
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM labels;"
+    results = SqlRunner.run(sql)
+    return results.map {|label| Label.new(label)}
+  end
+
+  def update()
+    sql = "UPDATE labels SET name = $1 WHERE id = $2;"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE from labels;"
+    SqlRunner.run(sql)
+  end
+
 end

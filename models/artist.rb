@@ -8,21 +8,34 @@ class Artist
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @label_id = options['label_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO artists
-    ( name,
-      label_id
+    ( name
     ) VALUES (
-      $1,
-      $2
+      $1
     ) RETURNING id;"
-    values = [@name, @label_id]
+    values = [@name]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM artists;"
+    results = SqlRunner.run(sql)
+    return results.map {|artist| Artist.new(artist)}
+  end
+
+  def update()
+    sql = "UPDATE artists SET name = $1 WHERE id = $2;"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE from artists;"
+    SqlRunner.run(sql)
+  end
 
 end
