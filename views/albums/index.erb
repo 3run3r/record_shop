@@ -1,3 +1,7 @@
+<p>
+  <a href="/albums/new">New album</a>
+</p>
+
 <% for album in @albums %>
     <ul>
       <li>
@@ -7,9 +11,11 @@
           <%= album.genre %><br>
           <%= album.label.name %><br>
           <%= album.stock_quantity %><br>
-          <%= album.buying_cost %><br>
-          <%= album.selling_price %><br>
+          <%= sprintf("%.2f", album.buying_cost)%><br>
+          <%= sprintf("%.2f", album.selling_price) %><br>
 
       </li>
     </ul>
+    <p><a href="/albums/<%= album.id %>/edit">Edit album</a></p>
+    <hr>
 <% end %>

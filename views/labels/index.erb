@@ -1,0 +1,12 @@
+<p>
+  <a href="/labels/new">New label</a>
+</p>
+
+<% for label in @labels %>
+    <ul>
+      <li>
+          <%= label.name %><br>
+
+      </li>
+    </ul>
+<% end %>
