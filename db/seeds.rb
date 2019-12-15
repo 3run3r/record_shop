@@ -5,62 +5,71 @@ require_relative('../models/label')
 require('pry')
 
 Album.delete_all()
-Label.delete_all()
 Artist.delete_all()
-
-label1 = Label.new({"name" => "Roadrunner Records"})
-label1.save()
+Label.delete_all()
 
 label2 = Label.new({"name" => "Lava Records"})
 label2.save()
-
 label3 = Label.new({"name" => "Cooking Vinyl"})
 label3.save()
-
 label4 = Label.new("name" => "XL Recordings")
 label4.save()
-
 label5 = Label.new("name" => "Liberato")
 label5.save()
+label1 = Label.new("name" => "asasadsa")
+label1.save
 
 artist1 = Artist.new({"name" => "Porcupine Tree"})
 artist1.save()
-
 artist2 = Artist.new({"name" => "Trans-Siberian Orchestra"})
 artist2.save()
-
 artist3 = Artist.new({"name" => "Opeth"})
 artist3.save()
-
 artist4 = Artist.new({"name" => "The Prodigy"})
 artist4.save()
-
 artist5 = Artist.new({"name" => "Radiohead"})
 artist5.save()
-
 artist6 = Artist.new({"name" => "LIBERATO"})
 artist6.save()
-
+#
+# album1 = Album.new(
+#   {"title" => "Watershed",
+#    "genre" => "Progressive Death Metal",
+#    "stock_quantity" => 10,
+#    "buying_cost" => 7.50,
+#    "selling_price" => 11.00,
+#    "artist_id" => artist3.id,
+#    "label_id" => label1.id
+#   }
+# )
 album1 = Album.new(
-  {"title" => "Fear Of A Blank Planet",
+  {"title" => "Pale Communion",
    "genre" => "Progressive Rock",
-   "stock_quantity" => 10,
-   "buying_cost" => 7.50,
-   "selling_price" => 11.00,
-   "artist_id" => artist1.id,
-   "label_id" => label1.id
-  }
+   "stock_quantity" => 15,
+   "buying_cost" => 7.00,
+   "selling_price" => 10.50,
+   "artist_id" => artist3.id,
+   "label_id" => label1.id}
 )
+# album2 = Album.new(
+#   {"title" => "Pale Communion",
+#    "genre" => "Progressive Rock",
+#    "stock_quantity" => 8,
+#    "buying_cost" => 8.00,
+#    "selling_price" => 11.50,
+#    "artist_id" => artist3.id,
+#    "label_id" => label1.id
+#   }
+# )
 
 album2 = Album.new(
-  {"title" => "The Incident",
+  {"title" => "Watershed",
    "genre" => "Progressive Rock",
-   "stock_quantity" => 8,
-   "buying_cost" => 8.00,
-   "selling_price" => 11.50,
-   "artist_id" => artist1.id,
-   "label_id" => label1.id
-  }
+   "stock_quantity" => 15,
+   "buying_cost" => 7.00,
+   "selling_price" => 10.50,
+   "artist_id" => artist3.id,
+   "label_id" => label1.id}
 )
 
 album3 = Album.new(
@@ -151,7 +160,29 @@ album10 = Album.new(
   }
 )
 
+album11 = Album.new(
+  {"title" => "A Moon Shaped Pool",
+   "genre" => "Alternative Rock",
+   "stock_quantity" => 30,
+   "buying_cost" => 9.50,
+   "selling_price" => 13.00,
+   "artist_id" => artist5.id,
+   "label_id" => label4.id
+  }
+)
 
+album12 = Album.new(
+  {"title" => "A Moowsan Shaped Pool",
+   "genre" => "Alternative Rock",
+   "stock_quantity" => 30,
+   "buying_cost" => 9.50,
+   "selling_price" => 13.00,
+   "artist_id" => artist5.id,
+   "label_id" => label4.id
+  }
+)
+
+#
 album1.save()
 album2.save()
 album3.save()
@@ -162,6 +193,7 @@ album7.save()
 album8.save()
 album9.save()
 album10.save()
+
 
 binding.pry
 nil

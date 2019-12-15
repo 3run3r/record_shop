@@ -1,0 +1,15 @@
+<% for album in @albums %>
+    <ul>
+      <li>
+        <a href="/<%= album.id %>">
+          <%= album.title %></a><br>
+        <a href="/artists/<%= album.artist.id %>">  <%= album.artist.name %> </a><br>
+          <%= album.genre %><br>
+          <%= album.label.name %><br>
+          <%= album.stock_quantity %><br>
+          <%= album.buying_cost %><br>
+          <%= album.selling_price %><br>
+
+      </li>
+    </ul>
+<% end %>

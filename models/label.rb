@@ -45,4 +45,12 @@ class Label
     return results.map {|artist| Artist.new(artist)}
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM labels
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Label.new( results.first )
+  end
+
 end
