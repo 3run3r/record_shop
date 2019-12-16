@@ -38,14 +38,14 @@ class Artist
     SqlRunner.run(sql)
   end
 
-  def labels()
-    sql = "SELECT labels.* FROM labels
-    INNER JOIN albums ON albums.label_id = labels.id
-    WHERE albums.artist_id = $1;"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map {|label| Label.new(label)}
-  end
+  # def labels()
+  #   sql = "SELECT labels.* FROM labels
+  #   INNER JOIN albums ON albums.label_id = labels.id
+  #   WHERE albums.artist_id = $1;"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   return results.map {|label| Label.new(label)}
+  # end
 
 
   def self.find( id )

@@ -1,58 +1,56 @@
-<p class="add-item">
-  <a href="/albums/new">Add new album</a>
-</p>
+<p><a href="/albums/new">Add new album</a></p>
 
+<section class="content-table">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Year</th>
+      <th>Label</th>
+      <th>Buying Cost</th>
+      <th>Selling Price</th>
+      <th>Stock</th>
+    </tr>
+    <% for album in @albums %>
+    <tr>
 
-<table class="center">
-  <tr>
-    <th>Title</th>
-    <th>Artist</th>
-    <th>Genre</th>
-    <th>Year</th>
-    <th>Label</th>
-    <th>Buying Cost</th>
-    <th>Selling Price</th>
-    <th>Stock</th>
-  </tr>
-  <% for album in @albums %>
-  <tr>
-
-    <td>
-      <a href="/albums/<%= album.id %>">
-        <%= album.title %></a>
+      <td>
+        <a href="/albums/<%= album.id %>">
+          <%= album.title %></a>
       </td>
       <td>
         <a href="/artists/<%= album.artist.id %>">
           <%= album.artist.name %> </a>
-        </td>
-        <td><%= album.genre %></td>
-        <td><%= album.year %></td>
-        <td><%= album.label.name %></td>
-        <td>£<%= sprintf("%.2f", album.buying_cost)%></td>
-        <td>£<%= sprintf("%.2f", album.selling_price) %></td>
-        <td>
-          <% if album.stock_quantity == 0 %>
-          out of stock
-          <% elsif album.stock_quantity <= 5 %>
-          low stock
-          <% else %>
-          in stock
-          <% end %>
+      </td>
+      <td><%= album.genre %></td>
+      <td><%= album.year %></td>
+      <td><%= album.label.name %></td>
+      <td>£<%= sprintf("%.2f", album.buying_cost)%></td>
+      <td>£<%= sprintf("%.2f", album.selling_price) %></td>
+      <td>
+        <% if album.stock_quantity == 0 %>
+        <div class="no-stock">out of stock</div>
+        <% elsif album.stock_quantity <= 5 %>
+        <div class="low-stock">low stock</div>
+        <% else %>
+        <div class="good-stock">in stock</div>
+        <% end %>
 
-          <form method="post" action="/albums/<%= album.id %>/stock">
-            <label for="quantity"></label>
-            <input
-            type="number"
-            name="stock_quantity"
-            id="quantity"
-            value="<%= album.stock_quantity %>"
-            /> <input type='submit' value="Edit Stock">
-          </form>
+        <form method="post" action="/albums/<%= album.id %>/stock">
+          <label for="quantity"></label>
+          <input
+              type="number"
+              name="stock_quantity"
+              id="quantity"
+              value="<%= album.stock_quantity %>"
+              />
+          <input type='submit' value="Edit Stock">
+        </form>
 
-        </td>
+      </td>
 
-      </tr>
-      <% end %>
-    </table>
-    <p><a href="/albums/<%= album.id %>/edit">Edit album</a></p>
-    <hr>
+    </tr>
+        <% end %>
+  </table>
+</section>

@@ -3,32 +3,26 @@
 <head>
   <meta charset="utf-8">
   <title>Record Shop</title>
+  <link rel="icon" href="/images/logo.png"/>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Record Shop</h1>
-    </div>
-    <div class="main-nav">
-      <ul>
-        <li>
-          <a href="/albums">Albums</a>
-        </li>
-        <li>
-          <a href="/artists">Artists</a>
-        </li>
-        <li>
-          <a href="/labels">Labels</a>
-        </li>
-      </ul>
-    </div
-    <div class="content">
+  <header class="main-header">
+    <section class="logo">
+      <img src="/images/logo.png">
+    </section>
+    <nav class="main-nav">
+        <ul>
+          <li><a href="/albums">Albums</a></li>
+          <li><a href="/artists">Artists</a></li>
+          <li><a href="/labels">Labels</a></li>
+        </ul>
+    </nav>
+  </header>
 
-      <div class="main">
-        <%= yield %>
-      </div>
-    </div>
-  </div>
+  <main>
+      <%= yield %>
+  <main>
+
 </body>
 </html>
