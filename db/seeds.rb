@@ -16,7 +16,7 @@ label4 = Label.new("name" => "XL Recordings")
 label4.save()
 label5 = Label.new("name" => "Liberato")
 label5.save()
-label1 = Label.new("name" => "asasadsa")
+label1 = Label.new("name" => "Roadrunner Records")
 label1.save
 
 artist1 = Artist.new({"name" => "Porcupine Tree"})
@@ -31,36 +31,18 @@ artist5 = Artist.new({"name" => "Radiohead"})
 artist5.save()
 artist6 = Artist.new({"name" => "LIBERATO"})
 artist6.save()
-#
-# album1 = Album.new(
-#   {"title" => "Watershed",
-#    "genre" => "Progressive Death Metal",
-#    "stock_quantity" => 10,
-#    "buying_cost" => 7.50,
-#    "selling_price" => 11.00,
-#    "artist_id" => artist3.id,
-#    "label_id" => label1.id
-#   }
-# )
+
+
 album1 = Album.new(
   {"title" => "Pale Communion",
    "genre" => "Progressive Rock",
    "stock_quantity" => 15,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
+   "year" => "2014",
    "artist_id" => artist3.id,
    "label_id" => label1.id}
 )
-# album2 = Album.new(
-#   {"title" => "Pale Communion",
-#    "genre" => "Progressive Rock",
-#    "stock_quantity" => 8,
-#    "buying_cost" => 8.00,
-#    "selling_price" => 11.50,
-#    "artist_id" => artist3.id,
-#    "label_id" => label1.id
-#   }
-# )
 
 album2 = Album.new(
   {"title" => "Watershed",
@@ -68,6 +50,7 @@ album2 = Album.new(
    "stock_quantity" => 15,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
+   "year" => "2009",
    "artist_id" => artist3.id,
    "label_id" => label1.id}
 )
@@ -78,6 +61,7 @@ album3 = Album.new(
    "stock_quantity" => 15,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
+   "year" => "2002",
    "artist_id" => artist1.id,
    "label_id" => label2.id
   }
@@ -89,6 +73,7 @@ album4 = Album.new(
    "stock_quantity" => 5,
    "buying_cost" => 6.00,
    "selling_price" => 9.50,
+   "year" => "1999",
    "artist_id" => artist2.id,
    "label_id" => label2.id
   }
@@ -100,6 +85,7 @@ album5 = Album.new(
    "stock_quantity" => 9,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
+   "year" => "2005",
    "artist_id" => artist3.id,
    "label_id" => label1.id
   }
@@ -111,6 +97,7 @@ album6 = Album.new(
    "stock_quantity" => 9,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
+   "year" => "2005",
    "artist_id" => artist1.id,
    "label_id" => label1.id
   }
@@ -122,6 +109,7 @@ album7 = Album.new(
    "stock_quantity" => 15,
    "buying_cost" => 8.00,
    "selling_price" => 11.50,
+   "year" => "1999",
    "artist_id" => artist4.id,
    "label_id" => label3.id
   }
@@ -133,6 +121,7 @@ album8 = Album.new(
    "stock_quantity" => 13,
    "buying_cost" => 7.50,
    "selling_price" => 11.00,
+   "year" => "2002",
    "artist_id" => artist4.id,
    "label_id" => label4.id
   }
@@ -144,6 +133,7 @@ album9 = Album.new(
    "stock_quantity" => 20,
    "buying_cost" => 8.50,
    "selling_price" => 12.00,
+   "year" => "2007",
    "artist_id" => artist5.id,
    "label_id" => label4.id
   }
@@ -152,9 +142,10 @@ album9 = Album.new(
 album10 = Album.new(
   {"title" => "LIBERATO",
    "genre" => "Trap, Indie",
-   "stock_quantity" => 30,
+   "stock_quantity" => 0,
    "buying_cost" => 9.50,
    "selling_price" => 13.00,
+   "year" => "2019",
    "artist_id" => artist6.id,
    "label_id" => label5.id
   }
@@ -166,21 +157,12 @@ album11 = Album.new(
    "stock_quantity" => 30,
    "buying_cost" => 9.50,
    "selling_price" => 13.00,
+   "year" => "2019",
    "artist_id" => artist5.id,
    "label_id" => label4.id
   }
 )
 
-album12 = Album.new(
-  {"title" => "A Moowsan Shaped Pool",
-   "genre" => "Alternative Rock",
-   "stock_quantity" => 30,
-   "buying_cost" => 9.50,
-   "selling_price" => 13.00,
-   "artist_id" => artist5.id,
-   "label_id" => label4.id
-  }
-)
 
 #
 album1.save()
@@ -193,6 +175,7 @@ album7.save()
 album8.save()
 album9.save()
 album10.save()
+album11.save()
 
 
 binding.pry

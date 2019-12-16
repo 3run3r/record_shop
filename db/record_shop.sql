@@ -22,6 +22,7 @@ CREATE TABLE albums
   stock_quantity INT,
   buying_cost DECIMAL(4, 2),
   selling_price DECIMAL(4, 2),
+  year VARCHAR(255),
   artist_id INT REFERENCES artists(id),
   label_id INT REFERENCES labels(id)
 )

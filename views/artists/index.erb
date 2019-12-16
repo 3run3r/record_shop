@@ -1,11 +1,13 @@
-<p>
-  <a href="/artists/new">New artist</a>
+<h1>Artists</h1>
+
+<p class="add-item">
+  <a href="/artists/new">Add new artist</a>
 </p>
 
 <% for artist in @artists %>
     <ul>
       <li>
-          <%= artist.name %><br>
+          <a href="/artists/<%= artist.id %>"><%= artist.name %> </a> <br>
 
       </li>
     </ul>

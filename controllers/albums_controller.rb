@@ -25,6 +25,11 @@ get '/albums/:id/edit' do
   erb( :"albums/edit" )
 end
 
+get '/albums/:id' do
+  @album = Album.find(params[:id])
+  erb( :"albums/show" )
+end
+
 post '/albums' do
   album = Album.new(params)
   album.save
@@ -32,6 +37,11 @@ post '/albums' do
 end
 
 post '/albums/:id' do
-  Album.new( params ).update
-  redirect to '/albums'
+  Album.new(params).update
+  redirect to("/albums")
+end
+
+post '/albums/:id/stock' do
+  Album.new(params).update_stock
+  redirect to("/albums")
 end

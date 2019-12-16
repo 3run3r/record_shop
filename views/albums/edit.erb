@@ -37,6 +37,14 @@
   value="<%= @album.genre %>"
   />
 
+  <label for="genre">Year:</label>
+  <input
+  type="number"
+  name="year"
+  id="year"
+  value="<%= @album.year %>"
+  />
+
   <label for="quantity">Stock quantity:</label>
   <input
   type="number"
@@ -50,7 +58,8 @@
   type="number"
   name="buying_cost"
   id="buying-cost"
-  min="0.50"
+  min="0.10"
+  step=".01"
   value="<%= sprintf("%.2f", @album.buying_cost) %>"
   />
 
@@ -59,7 +68,8 @@
   type="number"
   name="selling_price"
   id="selling-price"
-  min="0.50"
+  min="0.10"
+  step=".01"
   value="<%= sprintf("%.2f", @album.selling_price) %>"
   />
 

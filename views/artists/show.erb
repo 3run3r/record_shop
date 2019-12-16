@@ -1,8 +1,11 @@
 <h1><%= @artist.name %></h1>
+
+<h2> Albums and Labels</h2>
+
 <ul>
 
-  <% @artist.labels.each do |label| %>
-    <a href="/labels/<%= label.id %>"><li><%= label.name %></li></a>
+  <% @artist.albums.each do |album| %>
+    <li><a href="/albums/<%= album.id %>"><%= album.title %> (<%= album.label.name %>)</a></li>
   <% end %>
 
 </ul>

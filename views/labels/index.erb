@@ -1,11 +1,13 @@
-<p>
-  <a href="/labels/new">New label</a>
+<h1>Labels</h1>
+
+<p class="add-item">
+  <a href="/labels/new">Add new label</a>
 </p>
 
 <% for label in @labels %>
     <ul>
       <li>
-          <%= label.name %><br>
+          <a href="/labels/<%= label.id %>"> <%= label.name %></a> <br>
 
       </li>
     </ul>

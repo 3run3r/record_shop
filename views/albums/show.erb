@@ -1,0 +1,18 @@
+<h1> <%= @album.title %> </h1>
+
+<ul>
+  <li> Genre: <%= @album.genre %> </li> <br>
+  <li> Artist: <a href="/artists/<%= @album.artist.id %>"><%= @album.artist.name %> </a> </li> <br>
+  <li> Label: <%= @album.label.name %></li> <br>
+  <li> Buying Cost: £<%= sprintf("%.2f", @album.buying_cost)%></li><br>
+  <li> Selling Price: £<%= sprintf("%.2f", @album.selling_price) %></li><br>
+  <li> Stock Level:
+    <% if @album.stock_quantity == 0 %>
+      out of stock
+    <% elsif @album.stock_quantity <= 5 %>
+      low stock
+    <% else %>
+      in stock
+    <% end %></li><br>
+  <li> Quantity: <%= @album.stock_quantity %></li><br>
+</ul>
