@@ -7,8 +7,14 @@ require_relative('../models/artist')
 require_relative('../models/label')
 also_reload('./models/*')
 
-get '/albums' do
-  @albums = Album.all()
+get '/albums/?' do
+  @labels = Label.all()
+  if params[:label_id]
+    @label = Label.find(params[:label_id].to_i)
+    @albums = Label.albums(@label.id)
+  else
+    @albums = Album.all()
+  end
   erb( :"albums/index" )
 end
 

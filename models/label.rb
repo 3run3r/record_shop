@@ -45,10 +45,11 @@ class Label
   #   return results.map {|artist| Artist.new(artist)}
   # end
 
-  def albums()
+  def self.albums(id)
     sql = "SELECT albums.* FROM albums
-    WHERE albums.label_id = $1;"
-    values = [@id]
+    WHERE albums.label_id = $1
+    ORDER BY stock_quantity ASC;"
+    values = [id]
     results = SqlRunner.run(sql, values)
     return results.map {|album| Album.new(album)}
   end
@@ -59,6 +60,14 @@ class Label
     values = [id]
     results = SqlRunner.run( sql, values )
     return Label.new( results.first )
+  end
+
+  def albums()
+    sql = "SELECT albums.* FROM albums
+    WHERE albums.label_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|album| Album.new(album)}
   end
 
 end

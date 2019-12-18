@@ -1,8 +1,12 @@
-<h1>Artists</h1>
+<div class="title-add">
+  <h1>Artists</h1>
 
-<p class="add-item">
-  <a href="/artists/new">Add new artist</a>
-</p>
+  <p class="add-item">
+    <a href="/artists/new">Add new artist</a>
+  </p>
+</div>
+
+<br>
 
 <% for artist in @artists %>
     <ul>
@@ -12,3 +16,6 @@
       </li>
     </ul>
 <% end %>
+<br>
+<br>
+<p class="back"><a href="/albums">Back to Albums list</a></p>

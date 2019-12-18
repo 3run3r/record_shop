@@ -1,4 +1,18 @@
-<p><a href="/albums/new">Add new album</a></p>
+<p class="main-add-album"><a href="/albums/new">Add new album</a></p>
+
+
+<form class="main-filter" action="/albums" method="get">
+  <label>
+    <select name="label_id">
+      <option disabled selected value> -- select an option -- </option>
+        <% for label in @labels %>
+      <option value="<%= label.id %>"><%= label.name %></option>
+        <% end %>
+    </select>
+  </label>
+  <input type='submit' value="Filter By Label">
+</form>
+
 
 <section class="content-table">
   <table>
@@ -46,7 +60,7 @@
               min="0"
               value="<%= album.stock_quantity %>"
               />
-          <input type='submit' value="Edit Stock">
+          <input class="button" type='submit' value="Edit Stock">
         </form>
 
       </td>
