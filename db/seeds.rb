@@ -14,14 +14,14 @@ label3 = Label.new({"name" => "Cooking Vinyl"})
 label3.save()
 label4 = Label.new("name" => "XL Recordings")
 label4.save()
-label5 = Label.new("name" => "Liberato")
+label5 = Label.new("name" => "Warner Bros.")
 label5.save()
 label1 = Label.new("name" => "Roadrunner Records")
 label1.save
 
 artist1 = Artist.new({"name" => "Porcupine Tree"})
 artist1.save()
-artist2 = Artist.new({"name" => "Trans-Siberian Orchestra"})
+artist2 = Artist.new({"name" => "Sigur Rós"})
 artist2.save()
 artist3 = Artist.new({"name" => "Opeth"})
 artist3.save()
@@ -29,19 +29,19 @@ artist4 = Artist.new({"name" => "The Prodigy"})
 artist4.save()
 artist5 = Artist.new({"name" => "Radiohead"})
 artist5.save()
-artist6 = Artist.new({"name" => "LIBERATO"})
+artist6 = Artist.new({"name" => "Fleetwood Mac"})
 artist6.save()
 
 
 album1 = Album.new(
-  {"title" => "Pale Communion",
-   "genre" => "Progressive Rock",
-   "stock_quantity" => 15,
+  {"title" => "Rumours",
+   "genre" => "Classic Rock",
+   "stock_quantity" => 5,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
-   "year" => "2014",
-   "artist_id" => artist3.id,
-   "label_id" => label1.id}
+   "year" => "1976",
+   "artist_id" => artist6.id,
+   "label_id" => label5.id}
 )
 
 album2 = Album.new(
@@ -68,14 +68,14 @@ album3 = Album.new(
 )
 
 album4 = Album.new(
-  {"title" => "Night Castle",
-   "genre" => "Symphonic Metal",
+  {"title" => "Kveikur",
+   "genre" => "Post-Rock",
    "stock_quantity" => 5,
    "buying_cost" => 6.00,
    "selling_price" => 9.50,
-   "year" => "1999",
+   "year" => "2013",
    "artist_id" => artist2.id,
-   "label_id" => label2.id
+   "label_id" => label4.id
   }
 )
 
@@ -93,7 +93,7 @@ album5 = Album.new(
 
 album6 = Album.new(
   {"title" => "Deadwing",
-   "genre" => "Progressive Metal",
+   "genre" => "Progressive Rock",
    "stock_quantity" => 9,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
@@ -130,7 +130,7 @@ album8 = Album.new(
 album9 = Album.new(
   {"title" => "In Rainbows",
    "genre" => "Alternative Rock",
-   "stock_quantity" => 20,
+   "stock_quantity" => 0,
    "buying_cost" => 8.50,
    "selling_price" => 12.00,
    "year" => "2007",
@@ -140,9 +140,9 @@ album9 = Album.new(
 )
 
 album10 = Album.new(
-  {"title" => "LIBERATO",
-   "genre" => "Trap, Indie",
-   "stock_quantity" => 0,
+  {"title" => "Tusk",
+   "genre" => "Classic Rock",
+   "stock_quantity" => 10,
    "buying_cost" => 9.50,
    "selling_price" => 13.00,
    "year" => "2019",
