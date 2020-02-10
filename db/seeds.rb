@@ -36,7 +36,7 @@ artist6.save()
 album1 = Album.new(
   {"title" => "Rumours",
    "genre" => "Classic Rock",
-   "stock_quantity" => 5,
+   "stock_quantity" => 4,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
    "year" => "1976",
@@ -47,7 +47,7 @@ album1 = Album.new(
 album2 = Album.new(
   {"title" => "Watershed",
    "genre" => "Progressive Rock",
-   "stock_quantity" => 15,
+   "stock_quantity" => 3,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
    "year" => "2009",
@@ -58,7 +58,7 @@ album2 = Album.new(
 album3 = Album.new(
   {"title" => "In Absentia",
    "genre" => "Progressive Rock",
-   "stock_quantity" => 15,
+   "stock_quantity" => 7,
    "buying_cost" => 7.00,
    "selling_price" => 10.50,
    "year" => "2002",
@@ -169,13 +169,13 @@ album1.save()
 album2.save()
 album3.save()
 album4.save()
-album5.save()
-album6.save()
-album7.save()
-album8.save()
-album9.save()
-album10.save()
-album11.save()
+# album5.save()
+# album6.save()
+# album7.save()
+# album8.save()
+# album9.save()
+# album10.save()
+# album11.save()
 
 
 binding.pry
